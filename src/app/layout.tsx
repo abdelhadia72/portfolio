@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ChartCandlestick } from "lucide-react";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-[url('/images/mouse-pointer-2.svg'),auto] [&_button]:cursor-[url('/images/pointer.svg'),pointer] [&_a]:cursor-[url('/images/pointer.svg'),pointer]`}
       >
         {children}
       </body>
