@@ -40,7 +40,7 @@ const About = () => {
           </span>
           <span className="block font-serif text-xl mb-1">Abdelhadi</span>
           <span className="block text-gray-300">
-            I'm a software engineer, @jomatech
+            I{"'"}m a React.js developer
           </span>
         </div>
       </div>

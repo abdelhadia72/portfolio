@@ -6,8 +6,10 @@ import {
   Braces,
   Asterisk,
   Command,
-  ChevronDown,
+  FileDown,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Resume = () => {
   return (
@@ -24,12 +26,17 @@ const Resume = () => {
         <GraduationCap className="w-12 h-12 top-[20px] right-[-25px] rotate-[-25deg] text-white absolute group-hover:right-[0px] group-hover:rotate-[25deg] duration-300 ease-in-out transition-all transform hover:scale-110" />
         <Command className="w-12 h-12 top-[-35px] right-[150px] rotate-[-25deg] text-white absolute group-hover:rotate-[5deg] group-hover:right-[120px] group-hover:top-[-20px] duration-300 ease-in-out transition-all transform hover:scale-110" />
         <Asterisk className="w-12 h-12 top-[120px] right-[-30px] rotate-[-25deg] text-white absolute group-hover:right-[15px] group-hover:top-[110px] group-hover:rotate-[-10deg] duration-300 ease-in-out transition-all transform hover:scale-110" />
-        <button className="bg-white px-6 py-2 relative2 rounded-full hover:bg-opacity-70 transition-all">
-          <p className="font-medium flex gap-2 items-center w-fit">
-            Resume
-            <ChevronDown className="relative" />
-          </p>
-        </button>
+        <Link
+          href="https://drive.google.com/file/d/1EHa8JS2VuToiVAgUDSHNy1Ycx4br7AVz/view?usp=sharing"
+          target="_blank"
+        >
+          <button className="bg-white px-6 py-2 relative2 rounded-full hover:bg-opacity-70 transition-all hover:scale-105 group">
+            <p className="font-medium flex gap-3 items-center w-fit">
+              Resume
+              <FileDown className="w-5 h-5 group-hover:translate-y-0.5 transition-all duration-300 ease-in-out transform hover:scale-110" />
+            </p>
+          </button>
+        </Link>
       </div>
     </div>
   );
