@@ -2,6 +2,7 @@ import React from "react";
 import About from "./Components/About";
 import Empty from "./Components/Empty";
 import Resume from "./Components/Resume";
+import Skills from "./Components/Skills";
 
 const data = [
   {
@@ -20,8 +21,8 @@ const data = [
   {
     id: 3,
     name: "pro",
-    grid: "md:col-start-3 md:row-span-2 row-span-2 bg-green-400",
-    component: <Empty />,
+    grid: "md:col-start-3 md:row-span-2 row-span-2",
+    component: <Skills />,
   },
   { id: 3, name: "Now", grid: "bg-black", component: <Empty /> },
   { id: 4, name: "Media", grid: "bg-yellow-400", component: <Empty /> },
