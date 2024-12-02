@@ -9,7 +9,7 @@ const tabs = [
   { id: 4, name: "Contant" },
 ];
 
-const Nav: React.FC = () => {
+const Nav: React.FC = ({ setTag }) => {
   const [active, setActive] = useState(1);
   return (
     <div className="pt-4">
@@ -17,7 +17,10 @@ const Nav: React.FC = () => {
         {tabs.map((tab) => (
           <motion.div
             layoutId="active-bill"
-            onClick={() => setActive(tab.id)}
+            onClick={() => {
+              setActive(tab.id);
+              setTag(tab.name.toLowerCase());
+            }}
             className={`p-2 relative px-4 rounded-full cursor-pointer ${active === tab.id ? "" : "hover:text-gray-400"}`}
             key={tab.id}
           >

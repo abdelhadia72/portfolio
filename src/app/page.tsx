@@ -1,13 +1,15 @@
+"use client";
 import Cards from "./Cards";
-import Fakepage from "./Fakepage";
 import Nav from "./Nav";
+import { useState } from "react";
 
 export default function Home() {
+  const [filterTag, setFilterTag] = useState("about");
+
   return (
     <div className="min-h-screen w-screen bg-[#201d20]">
-      <Nav />
-      <Cards />
-      {/* <Fakepage /> */}
+      <Nav setTag={setFilterTag} />
+      <Cards filterTag={filterTag} />
     </div>
   );
 }
