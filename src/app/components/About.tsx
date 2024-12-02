@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import WavesurferPlayer from "@wavesurfer/react";
 import { CirclePlay, CirclePause } from "lucide-react";
+import FlickeringGrid from "@/components/ui/flickering-grid";
 
 const About = () => {
   const [wavesurfer, setWavesurfer] = useState<any>(null);
@@ -22,8 +23,8 @@ const About = () => {
   };
 
   return (
-    <div className="about w-full h-full bg-[#37393e] p-3 rounded-lg">
-      <div className="info flex gap-2 items-center">
+    <div className="about w-full h-full bg-[#37393e] p-3 rounded-lg relative overflow-hidden">
+      <div className="info flex gap-2 items-center relative z-10">
         <Image
           src="/images/avtar.jpg"
           className="rounded-xl"
@@ -44,7 +45,7 @@ const About = () => {
           </span>
         </div>
       </div>
-      <div className="audio p-2 rounded-md mt-2 w-full bg-gray-800">
+      <div className="audio p-2 rounded-md mt-2 w-full bg-gray-800 relative z-10">
         <div className="flex gap-2 items-center">
           <button onClick={onPlayPause} className="text-white">
             {isPlaying ? <CirclePause /> : <CirclePlay />}
@@ -79,7 +80,20 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bills"></div>
+      <div className="color">
+        <span className="absolute bg-[#57e389] h-[100px] w-[150px] top-0 -right-10 blur-[140px]"></span>
+        <span className="absolute bg-[#f472b6] h-[100px] w-[150px] opacity-50 bottom-0 -left-10 blur-[70px]"></span>
+      </div>
+      {/* <FlickeringGrid
+        className="z-0 absolute top-0 inset-0 opacity-80 [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
+        squareSize={4}
+        gridGap={6}
+        color="#60A5FA"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+        height={800}
+        width={800}
+      /> */}
     </div>
   );
 };

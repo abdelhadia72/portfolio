@@ -1,8 +1,11 @@
 import React from "react";
-import About from "./Components/About";
-import Empty from "./Components/Empty";
-import Resume from "./Components/Resume";
-import Skills from "./Components/Skills";
+import About from "./components/About";
+import Empty from "./components/Empty";
+import Resume from "./components/Resume";
+import Skills from "./components/Skills";
+import Media from "./components/Media";
+import Now from "./components/Now";
+import QuoteComponent from "./components/Quotes";
 
 const data = [
   {
@@ -24,15 +27,15 @@ const data = [
     grid: "md:col-start-3 md:row-span-2 row-span-2",
     component: <Skills />,
   },
-  { id: 3, name: "Now", grid: "bg-black", component: <Empty /> },
-  { id: 4, name: "Media", grid: "bg-yellow-400", component: <Empty /> },
+  { id: 3, name: "Now", grid: "h-full", component: <Now /> },
+  { id: 4, name: "Media", grid: "", component: <Media /> },
   {
     id: 5,
     name: "Quites",
-    grid: "col-span-2 md:col-span-2 md:col-start-1 bg-purple-400",
-    component: <Empty />,
+    grid: "col-span-2 md:col-span-2 md:col-start-1",
+    component: <QuoteComponent />,
   },
-  { id: 6, name: "Map", grid: "bg-pink-400", component: <Empty /> },
+  { id: 6, name: "Map", grid: "bg-red-400", component: <Empty /> },
   {
     id: 7,
     name: "P1",

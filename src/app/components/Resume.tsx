@@ -31,7 +31,7 @@ const Resume = () => {
         >
           <button className="bg-white px-6 py-2 relative2 rounded-full hover:bg-opacity-70 transition-all hover:scale-105 group">
             <p className="font-medium flex gap-3 items-center w-fit">
-              Resume
+              Download Resume
               <FileDown className="w-5 h-5 group-hover:translate-y-0.5 transition-all duration-300 ease-in-out transform hover:scale-110" />
             </p>
           </button>
