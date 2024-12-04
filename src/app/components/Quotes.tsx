@@ -9,12 +9,8 @@ export default function QuoteComponent() {
       <div className="relative z-10 w-full space-y-6">
         <p className="font-serif text-lg leading-relaxed tracking-wide text-indigo-100">
           <span className="text-3xl font-bold text-indigo-300">"</span>
-          When the sun comes down and the day goes by forever
-          <br />
-          Seasons change, I'll be here to grind for better
-          <br />
-          Steady vision all the time, it ain't shaking
-          <br />I know my fate is in my mind, I can make it
+          When the sun sets and seasons shift, I stay grinding, Focused,
+          unshaken—my fate's mine for defining
           <span className="text-3xl font-bold text-indigo-300">"</span>
         </p>
         <div className="flex items-center space-x-4 pt-4">

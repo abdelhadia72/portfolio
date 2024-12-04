@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import { useState } from "react";
 
 export default function Home() {
-  const [filterTag, setFilterTag] = useState("about");
+  const [filterTag, setFilterTag] = useState("all");
 
   return (
     <div className="min-h-screen w-screen bg-[#201d20]">

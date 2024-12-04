@@ -1,113 +1,227 @@
-"use client";
-
+import React from "react";
+import { cn } from "@/lib/utils";
+import Marquee from "@/components/ui/marquee";
 import {
-  SiHtml5,
-  SiCss3,
-  SiGithub,
-  SiJavascript,
+  SiNextdotjs,
   SiReact,
-  SiNodedotjs,
-  SiLinux,
-  SiC,
-  SiPython,
-  SiDocker,
+  SiTailwindcss,
+  SiCss3,
+  SiSass,
   SiMongodb,
-  SiNginx,
-} from "@icons-pack/react-simple-icons";
+  SiExpress,
+  SiMysql,
+  SiPostman,
+  SiJavascript,
+  SiPython,
+  SiC,
+  SiDocker,
+  SiLinux,
+} from "react-icons/si";
 
-export default function Skills() {
+interface Icon {
+  name: string;
+  href: string;
+  icon: React.ReactNode;
+  className: string;
+}
+
+const icons: Icon[] = [
+  {
+    name: "Next.js",
+    href: "#",
+    icon: (
+      <>
+        <SiNextdotjs />
+        <span className="ml-2 font-bold">Next.js</span>
+      </>
+    ),
+    className: "text-white ",
+  },
+  {
+    name: "React",
+    href: "#",
+    icon: (
+      <>
+        <SiReact />
+        <span className="ml-2 font-bold">React</span>
+      </>
+    ),
+    className: "text-[#61DAFB] ",
+  },
+  {
+    name: "Tailwind",
+    href: "#",
+    icon: (
+      <>
+        <SiTailwindcss />
+        <span className="ml-2 font-bold">Tailwind</span>
+      </>
+    ),
+    className: "text-[#38B2AC] ",
+  },
+  {
+    name: "CSS",
+    href: "#",
+    icon: (
+      <>
+        <SiCss3 />
+        <span className="ml-2 font-bold">CSS</span>
+      </>
+    ),
+    className: "text-[#1572B6] ",
+  },
+  {
+    name: "Sass",
+    href: "#",
+    icon: (
+      <>
+        <SiSass />
+        <span className="ml-2 font-bold">Sass</span>
+      </>
+    ),
+    className: "text-[#CC6699] ",
+  },
+  {
+    name: "MongoDB",
+    href: "#",
+    icon: (
+      <>
+        <SiMongodb />
+        <span className="ml-2 font-bold">MongoDB</span>
+      </>
+    ),
+    className: "text-[#47A248] ",
+  },
+  {
+    name: "Express",
+    href: "#",
+    icon: (
+      <>
+        <SiPostman />
+        <span className="ml-2 font-bold">Express</span>
+      </>
+    ),
+    className: "text-white ",
+  },
+  {
+    name: "MySQL",
+    href: "#",
+    icon: (
+      <>
+        <SiMysql />
+        <span className="ml-2 font-bold">MySQL</span>
+      </>
+    ),
+    className: "text-[#4479A1] ",
+  },
+  {
+    name: "API",
+    href: "#",
+    icon: (
+      <>
+        <SiPostman />
+        <span className="ml-2 font-bold">API</span>
+      </>
+    ),
+    className: "text-[#FF6C37] ",
+  },
+  {
+    name: "JavaScript",
+    href: "#",
+    icon: (
+      <>
+        <SiJavascript />
+        <span className="ml-2 font-bold">JavaScript</span>
+      </>
+    ),
+    className: "text-[#F7DF1E] ",
+  },
+  {
+    name: "Python",
+    href: "#",
+    icon: (
+      <>
+        <SiPython />
+        <span className="ml-2 font-bold">Python</span>
+      </>
+    ),
+    className: "text-[#3776AB] ",
+  },
+  {
+    name: "C",
+    href: "#",
+    icon: (
+      <>
+        <SiC />
+        <span className="ml-2 font-bold">C</span>
+      </>
+    ),
+    className: "text-[#A8B9CC] ",
+  },
+  {
+    name: "Docker",
+    href: "#",
+    icon: (
+      <>
+        <SiDocker />
+        <span className="ml-2 font-bold">Docker</span>
+      </>
+    ),
+    className: "text-[#2496ED]",
+  },
+  {
+    name: "Linux",
+    href: "#",
+    icon: (
+      <>
+        <SiLinux />
+        <span className="ml-2 font-bold">Linux</span>
+      </>
+    ),
+    className: "text-[#FCC624] ",
+  },
+];
+
+const firstRow = icons.slice(0, Math.ceil(icons.length / 2));
+const secondRow = icons.slice(Math.ceil(icons.length / 2));
+
+export default function FloatingIcons() {
   return (
-    <div className="w-full h-full bg-[#37393e] p-3 rounded-lg relative overflow-hidden">
-      <div className="relative h-[300px]">
-        {[
-          {
-            icon: SiHtml5,
-            name: "HTML5",
-            color: "text-orange-500",
-            position: "top-4 left-8",
-          },
-          {
-            icon: SiCss3,
-            name: "CSS3",
-            color: "text-blue-500",
-            position: "top-16 right-12",
-          },
-          {
-            icon: SiGithub,
-            name: "GitHub",
-            color: "text-purple-500",
-            position: "bottom-8 left-24",
-          },
-          {
-            icon: SiJavascript,
-            name: "JavaScript",
-            color: "text-yellow-400",
-            position: "top-32 left-48",
-          },
-          {
-            icon: SiNodedotjs,
-            name: "Node.js",
-            color: "text-green-500",
-            position: "bottom-16 right-36",
-          },
-          {
-            icon: SiReact,
-            name: "React",
-            color: "text-blue-400",
-            position: "top-8 right-48",
-          },
-          {
-            icon: SiLinux,
-            name: "Linux",
-            color: "text-gray-200",
-            position: "bottom-24 left-12",
-          },
-          {
-            icon: SiC,
-            name: "C",
-            color: "text-blue-600",
-            position: "top-24 left-32",
-          },
-          {
-            icon: SiPython,
-            name: "Python",
-            color: "text-yellow-500",
-            position: "bottom-12 right-16",
-          },
-          {
-            icon: SiDocker,
-            name: "Docker",
-            color: "text-blue-500",
-            position: "top-12 right-24",
-          },
-          {
-            icon: SiMongodb,
-            name: "MongoDB",
-            color: "text-green-500",
-            position: "bottom-32 right-48",
-          },
-          {
-            icon: SiNginx,
-            name: "Nginx",
-            color: "text-green-400",
-            position: "top-48 left-16",
-          },
-        ].map((Item, index) => (
-          <div key={index} className={`absolute ${Item.position} group`}>
-            <Item.icon
-              className={`w-8 h-8 transition-all duration-300 ${Item.color} opacity-100 group-hover:scale-110`}
-            />
-            <div
-              className={`absolute inset-0 blur-xl transition-opacity duration-300 opacity-0 opacity-50 ${Item.color}`}
-            >
-              <Item.icon className="w-8 h-8" />
-            </div>
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              {Item.name}
+    <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-[#1e1e1e] md:shadow-xl">
+      <Marquee pauseOnHover className="[--duration:15s]">
+        {firstRow.map((icon) => (
+          <div
+            key={icon.name}
+            className={cn(
+              "flex items-center justify-between gap-3 rounded-lg border border-zinc-800 px-5 py-3 text-sm font-medium shadow-sm transition-all hover:bg-zinc-900/50 hover:border-zinc-700 hover:scale-[1.02] active:scale-[0.98]",
+              "group",
+              icon.className,
+            )}
+          >
+            <div className="text-[inherit] transition-colors duration-300 flex items-center">
+              {icon.icon}
             </div>
           </div>
         ))}
-      </div>
+      </Marquee>
+      <Marquee reverse pauseOnHover className="[--duration:15s]">
+        {firstRow.map((icon) => (
+          <div
+            key={icon.name}
+            className={cn(
+              "flex items-center justify-between gap-3 rounded-lg border border-zinc-800 px-5 py-3 text-sm font-medium shadow-sm transition-all hover:bg-zinc-900/50 border-zinc-700 hover:scale-[1.02] active:scale-[0.98]",
+              "group",
+              icon.className,
+            )}
+          >
+            <div className="text-[inherit] transition-colors duration-300 flex items-center">
+              {icon.icon}
+            </div>
+          </div>
+        ))}
+      </Marquee>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#1e1e1e]"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#1e1e1e]"></div>
     </div>
   );
 }

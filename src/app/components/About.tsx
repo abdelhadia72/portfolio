@@ -26,7 +26,7 @@ const About = () => {
     <div className="about w-full h-full bg-[#37393e] p-3 rounded-lg relative overflow-hidden">
       <div className="info flex gap-2 items-center relative z-10">
         <Image
-          src="/images/avtar.jpg"
+          src="/images/ab.jpg"
           className="rounded-xl"
           height={120}
           width={120}
