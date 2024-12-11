@@ -31,7 +31,7 @@ const PhoneProject = () => {
           alt="Phone UI"
           width={300}
           height={200}
-          className="rounded-lg shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out"
+          className="rounded-lg shadow-lg group-hover:scale-105 transition-all relative hover:translate-y-[-70px] duration-300 ease-in-out"
         />
       </div>
     </div>

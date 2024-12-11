@@ -1,42 +1,54 @@
 "use client";
 import About from "./components/About";
-import Empty from "./components/Empty";
-import Resume from "./components/Resume";
-import Skills from "./components/Skills";
 import Media from "./components/Media";
 import Now from "./components/Now";
 import QuoteComponent from "./components/Quotes";
 import { motion, AnimatePresence } from "framer-motion";
 import WebProject from "./components/WebProject";
 import PhoneProject from "./components/PhoneProject";
-import Links from "./components/Links";
 import LocationMap from "./components/Map";
+import Empty from "./components/Empty";
 
 const data = [
   {
     id: 1,
     name: "About",
+    grid: "md:col-span-2 md:row-span-1",
     component: <About />,
     tag: ["about", "all"],
   },
   {
     id: 2,
-    name: "Skills",
-    grid: "",
-    component: <Resume />,
-    tag: ["about", "all"],
-  },
-  {
-    id: 3,
     name: "Now",
-    grid: "h-full",
+    grid: "md:h-full md:row-span-1",
     component: <Now />,
     tag: ["about", "all"],
   },
   {
+    id: 11,
+    name: "Project 2",
+    grid: "md:row-span-2 md:h-full",
+    component: <PhoneProject />,
+    tag: ["project", "all"],
+  },
+  {
+    id: 4,
+    name: "Empty",
+    grid: "md:h-full bg-green-400 md:row-span-1",
+    component: <Empty />,
+    tag: ["about", "contact", "all"],
+  },
+  {
+    id: 9,
+    name: "Location",
+    grid: "",
+    component: <LocationMap />,
+    tag: ["contact", "all"],
+  },
+  {
     id: 6,
     name: "Media",
-    grid: "",
+    grid: "md:col-span-1",
     component: <Media />,
     tag: ["contact", "all"],
   },
@@ -47,40 +59,19 @@ const data = [
     component: <QuoteComponent />,
     tag: ["about", "all"],
   },
-  // {
-  //   id: 8,
-  //   name: "Map",
-  //   grid: "bg-red-400",
-  //   component: <Skills />,
-  //   tag: ["about", "all"],
-  // },
-  {
-    id: 9,
-    name: "P1",
-    grid: "",
-    component: <LocationMap />,
-    tag: ["project", "all"],
-  },
   {
     id: 10,
-    name: "P2",
-    grid: "",
+    name: "Project 1",
+    grid: "md:w-full lg:col-span-2 bg-red-400",
     component: <WebProject />,
-    tag: ["project", "all"],
-  },
-  {
-    id: 11,
-    name: "P3",
-    grid: "",
-    component: <PhoneProject />,
     tag: ["project", "all"],
   },
   {
     id: 12,
-    name: "P4",
-    grid: " row-span-2",
+    name: "Project 3",
+    grid: "md:w-full",
     component: <WebProject />,
-    tag: ["contact", "all"],
+    tag: ["project", "all"],
   },
 ];
 
@@ -91,7 +82,7 @@ const Cards = ({ filterTag }: { filterTag: string }) => {
   const otherData = data.filter((c) => !c.tag.includes(filterTag));
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 h-min-screen [&>*]:min-h-[150px] max-w-[1200px] mx-auto px-4 py-6 pb-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-row gap-4 h-min-screen [&>*]:min-h-[150px] max-w-[1200px] mx-auto px-4 py-6 pb-10">
       <AnimatePresence mode="wait">
         {filteredData.map((g) => (
           <motion.div

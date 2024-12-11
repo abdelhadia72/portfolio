@@ -16,7 +16,7 @@ const WebProject = () => {
           alt="Desktop Screenshot"
           width={800}
           height={450}
-          className="rounded-lg bottom-[-20%] right-[-10%] absolute shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out object-contain"
+          className="rounded-lg bottom-[-20%] right-2%] scale-75 absolute shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out object-contain"
         />
       </div>
     </div>

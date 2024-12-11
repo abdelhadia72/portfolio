@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 
 export default function QuoteComponent() {
   return (
-    <div className="relative w-full bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white p-8 rounded-2xl shadow-2xl border border-indigo-700 transition-all duration-300 ease-in-out hover:shadow-3xl hover:border-indigo-500 overflow-hidden group">
+    <div className="relative w-full h-full bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white p-8 rounded-xl shadow-2xl border border-indigo-700 transition-all duration-300 ease-in-out hover:shadow-3xl hover:border-indigo-500 overflow-hidden group">
       <div className="absolute top-0 left-0 w-full h-full bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
       <Quote className="absolute -top-4 -left-4 w-20 h-20 text-indigo-400 opacity-20 transform rotate-12 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-30" />
       <div className="relative z-10 w-full space-y-6">

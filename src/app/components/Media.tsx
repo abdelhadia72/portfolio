@@ -36,7 +36,7 @@ const secondRow = socialLinks.slice(socialLinks.length / 2);
 
 const Media = () => {
   return (
-    <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-black bg-[#1e1e1e] md:shadow-xl">
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-black bg-[#1e1e1e] md:shadow-xl">
       <Marquee pauseOnHover className="[--duration:6s] rotate-[-15deg]">
         {firstRow.map((link) => (
           <SocialLink
