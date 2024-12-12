@@ -14,10 +14,8 @@ interface SocialLinkProps {
 export default function SocialLink({
   icon: Icon,
   username,
-  href,
   rightIcon: RightIcon,
   variant = "default",
-  className,
 }: SocialLinkProps) {
   const variants = {
     default:
@@ -29,7 +27,7 @@ export default function SocialLink({
   };
 
   return (
-    <Link href={href} className={`${cn(variants[variant])}`}>
+    <span className={`${cn(variants[variant])}`}>
       <div className={`flex items-center gap-3`}>
         <Icon className="h-5 w-5" />
         <span className="font-medium">{username}</span>
@@ -37,6 +35,6 @@ export default function SocialLink({
       {RightIcon && (
         <RightIcon className="h-5 w-5 text-zinc-400 group-hover:text-zinc-300" />
       )}
-    </Link>
+    </span>
   );
 }

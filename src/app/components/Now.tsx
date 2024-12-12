@@ -1,4 +1,4 @@
-import { Code2, CastleIcon as ChessKnight, Palette } from "lucide-react";
+import { Code2, Atom, Palette } from "lucide-react";
 
 export default function Now() {
   return (
@@ -12,21 +12,21 @@ export default function Now() {
       </div>
       <div className="space-y-3">
         <div className="flex items-center">
-          <Code2 className="w-5 h-5 mr-2 text-blue-500" />
+          <Code2 className="w-5 h-5 mr-2 text-green-500" />
           <p>
-            Working on <span className="font-medium">X something</span>
+            Working on <span className="font-medium">Placeholder </span>
           </p>
         </div>
         <div className="flex items-center">
-          <ChessKnight className="w-5 h-5 mr-2 text-green-500" />
+          <Atom className="w-5 h-5 mr-2 text-[#5dd3f4]" />
           <p>
-            Learning <span className="font-medium">X something</span>
+            Learning <span className="font-medium">React Native</span>
           </p>
         </div>
         <div className="flex items-center">
           <Palette className="w-5 h-5 mr-2 text-purple-500" />
           <p>
-            Learning <span className="font-medium">X something</span>
+            Learning <span className="font-medium"> something else</span>
           </p>
         </div>
       </div>

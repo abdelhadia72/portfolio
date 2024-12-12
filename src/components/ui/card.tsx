@@ -2,13 +2,13 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const grids = {
-  small: "grid-cols-1",
-  medium: "grid-cols-2",
-  large: "grid-cols-3",
-  xl: "grid-cols-4",
-  xxl: "grid-cols-5",
-};
+// const grids = {
+//   small: "grid-cols-1",
+//   medium: "grid-cols-2",
+//   large: "grid-cols-3",
+//   xl: "grid-cols-4",
+//   xxl: "grid-cols-5",
+// };
 
 const Card = React.forwardRef<
   HTMLDivElement,

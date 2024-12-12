@@ -21,13 +21,13 @@ const projectData: ProjectData = {
   description: "A project for managing loader and management systems",
   longDescription:
     "Detailed description of the Lodaify project. This is a loader management system that helps teams streamline their workflow and improve productivity through intuitive interfaces and powerful features.",
-  image: "/images/p2.png",
+  image: "/images/p1.avif",
   technologies: ["React", "Node.js", "MongoDB", "Express"],
   githubUrl: "https://github.com/yourusername/lodaify",
   liveUrl: "https://lodaify-demo.com",
 };
 
-const PhoneProject = () => {
+const WebProjectTwo = () => {
   const [showModal, setShowModal] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -38,6 +38,14 @@ const PhoneProject = () => {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
     });
+  };
+
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.3 },
+    },
   };
 
   const modalVariants = {
@@ -73,7 +81,7 @@ const PhoneProject = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-        className="h-full group rounded-lg max-h-[400px] w-full relative before:absolute before:inset-0 before:bg-[url('/stars.png')] before:bg-repeat before:opacity-50 before:animate-twinkle"
+        className="h-full relative overflow-hidden group rounded-lg max-h-[400px] w-full bg-gradient-to-br from-[#ff6432] via-[#ff1958] to-[#7b2eff]"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
         style={{ cursor: "none" }}
@@ -98,20 +106,24 @@ const PhoneProject = () => {
           )}
         </AnimatePresence>
 
-        <div className="text p-8">
-          <h1 className="text-4xl font-bold text-white mb-4">
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all z-10 duration-300" />
+
+        <div className="text p-4 md:p-8">
+          <h1 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-4">
             {projectData.title}
           </h1>
-          <p className="text-lg text-white/80">{projectData.description}</p>
+          <p className="text-base md:text-lg text-white/80">
+            {projectData.description}
+          </p>
         </div>
 
-        <div className="image p-8">
+        <div className="image p-4 md:p-8">
           <Image
             src={projectData.image}
-            alt="Phone UI"
-            width={300}
-            height={200}
-            className="rounded-lg shadow-lg group-hover:scale-105 transition-all relative hover:translate-y-[-70px] duration-300 ease-in-out group-hover:blur-sm"
+            alt="Desktop Screenshot"
+            width={800}
+            height={450}
+            className="rounded-lg bottom-[-30%] right-[-25%] scale-75 absolute shadow-lg transition-all duration-300 ease-in-out object-contain group-hover:blur-sm"
           />
         </div>
       </motion.div>
@@ -119,10 +131,11 @@ const PhoneProject = () => {
       <AnimatePresence>
         {showModal && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 backdrop-blur-md bg-black/60 z-50 flex items-center justify-center p-4"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={backdropVariants}
+            className="fixed inset-0 backdrop-blur-md bg-black/60 z-50 flex items-center justify-center p-2 md:p-4"
             onClick={() => setShowModal(false)}
           >
             <motion.div
@@ -130,20 +143,20 @@ const PhoneProject = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bg-gray-900/95 backdrop-blur-xl rounded-xl w-full max-w-4xl shadow-2xl overflow-hidden"
+              className="bg-gray-900/95 backdrop-blur-xl rounded-xl w-full max-w-[95%] md:max-w-4xl shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
                 <motion.button
                   onClick={() => setShowModal(false)}
-                  className="absolute right-4 top-4 text-white hover:text-white/80 z-10"
+                  className="absolute right-2 md:right-4 top-2 md:top-4 text-white hover:text-white/80 z-10"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <IoClose size={24} />
                 </motion.button>
 
-                <div className="h-[300px] relative overflow-hidden">
+                <div className="h-[200px] md:h-[300px] relative overflow-hidden">
                   <Image
                     src={projectData.image}
                     alt="Project Preview"
@@ -155,21 +168,21 @@ const PhoneProject = () => {
                 </div>
               </div>
 
-              <div className="p-8 -mt-16 relative">
+              <div className="p-4 md:p-8 -mt-16 relative">
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-3xl font-bold text-white mb-4"
+                  className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4"
                 >
                   {projectData.title}
                 </motion.h2>
 
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="text-lg text-white/90 leading-relaxed"
+                    className="text-sm md:text-lg text-white/90 leading-relaxed"
                   >
                     {projectData.longDescription}
                   </motion.p>
@@ -178,9 +191,9 @@ const PhoneProject = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="pt-4"
+                    className="pt-3 md:pt-4"
                   >
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-2">
                       Technologies
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -190,7 +203,7 @@ const PhoneProject = () => {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.4 + index * 0.1 }}
-                          className="px-3 py-1 bg-white/10 rounded-full text-sm text-white"
+                          className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm text-white"
                         >
                           {tech}
                         </motion.span>
@@ -198,14 +211,14 @@ const PhoneProject = () => {
                     </div>
                   </motion.div>
 
-                  <div className="flex gap-4 pt-6">
+                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 pt-4 md:pt-6">
                     <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       href={projectData.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white/20 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors"
+                      className="flex items-center justify-center gap-2 bg-white/20 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-white/30 transition-colors text-sm md:text-base"
                     >
                       <FaGithub size={18} />
                       <span>View Source</span>
@@ -216,7 +229,7 @@ const PhoneProject = () => {
                       href={projectData.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white/20 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors"
+                      className="flex items-center justify-center gap-2 bg-white/20 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-white/30 transition-colors text-sm md:text-base"
                     >
                       <HiExternalLink size={18} />
                       <span>Live Demo</span>
@@ -232,4 +245,4 @@ const PhoneProject = () => {
   );
 };
 
-export default PhoneProject;
+export default WebProjectTwo;

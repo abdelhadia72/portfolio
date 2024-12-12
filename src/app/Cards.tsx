@@ -2,14 +2,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Components
 import About from "./components/About";
 import Media from "./components/Media";
 import Now from "./components/Now";
 import QuoteComponent from "./components/Quotes";
 import WebProject from "./components/WebProject";
+import WebProjectTwo from "./components/WebProjectTwo";
 import PhoneProject from "./components/PhoneProject";
 import LocationMap from "./components/Map";
-import Empty from "./components/Empty";
+import Form from "./components/Form";
+// import Empty from "./components/Empty";
 
 const componentMap = {
   About: <About />,
@@ -17,10 +20,12 @@ const componentMap = {
   Now: <Now />,
   Quotes: <QuoteComponent />,
   WebProject: <WebProject />,
+  WebProjectTwo: <WebProjectTwo />,
   PhoneProject: <PhoneProject />,
   LocationMap: <LocationMap />,
-  Empty: <Empty />,
+  Form: <Form />,
 };
+
 const createCardData = (filterTag: string) => [
   {
     id: 1,
@@ -32,7 +37,7 @@ const createCardData = (filterTag: string) => [
   {
     id: 2,
     name: "Now",
-    grid: "md:h-full md:row-span-1",
+    grid: "md:h-full md:row-span-1 w-full",
     component: "Now",
     tag: ["about", "all"],
   },
@@ -45,9 +50,9 @@ const createCardData = (filterTag: string) => [
   },
   {
     id: 4,
-    name: "Empty",
-    grid: "md:h-full bg-green-400 md:row-span-1 skills",
-    component: "Empty",
+    name: "Form",
+    grid: "md:h-full  md:row-span-1 skills",
+    component: "Form",
     tag: ["about", "contact", "all"],
   },
   {
@@ -74,7 +79,7 @@ const createCardData = (filterTag: string) => [
   {
     id: 10,
     name: "Project 1",
-    grid: "md:w-full lg:col-span-2 bg-red-400",
+    grid: "md:w-full lg:col-span-2",
     component: "WebProject",
     tag: ["project", "all"],
   },
@@ -88,7 +93,7 @@ const createCardData = (filterTag: string) => [
           ? "md:col-start-1 md:row-start-3"
           : ""
     }`,
-    component: "WebProject",
+    component: "WebProjectTwo",
     tag: ["project", "all"],
   },
 ];
@@ -99,64 +104,55 @@ interface CardsProps {
 
 const Cards: React.FC<CardsProps> = ({ filterTag }) => {
   const [data, setData] = useState(createCardData(filterTag));
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0,
-  );
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setMounted(true);
   }, []);
 
   useEffect(() => {
     setData(createCardData(filterTag));
   }, [filterTag]);
 
-  const filteredData = data.filter((c) => c.tag.includes(filterTag));
-  const otherData = data.filter((c) => !c.tag.includes(filterTag));
-
-  const getGridClasses = () => {
-    if (windowWidth < 640) return "grid-cols-1";
-    if (windowWidth < 768) return "grid-cols-2";
-    if (windowWidth < 1024) return "grid-cols-3";
-    return "grid-cols-4";
-  };
-
   return (
     <div
-      className={`grid ${getGridClasses()} gap-4 h-min-screen [&>*]:min-h-[150px] max-w-[1200px] mx-auto px-4 py-6 pb-10`}
+      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-min-screen [&>*]:min-h-[150px] max-w-[1200px] mx-auto px-4 py-6 pb-10`}
     >
       <AnimatePresence mode="wait">
-        {filteredData.map((card) => (
-          <motion.div
-            key={card.id}
-            className={`${card.grid} opacity-100 hover:rotate-x-[10deg]`}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            layout
-          >
-            {componentMap[card.component as keyof typeof componentMap]}
-          </motion.div>
-        ))}
-        {otherData.map((card) => (
-          <motion.div
-            key={card.id}
-            className={`${card.grid} opacity-25`}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.25 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            layout
-          >
-            {componentMap[card.component as keyof typeof componentMap]}
-          </motion.div>
-        ))}
+        {mounted && (
+          <>
+            {data
+              .filter((c) => c.tag.includes(filterTag))
+              .map((card) => (
+                <motion.div
+                  key={card.id}
+                  className={`${card.grid} opacity-100 hover:rotate-x-[10deg]`}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  layout
+                >
+                  {componentMap[card.component as keyof typeof componentMap]}
+                </motion.div>
+              ))}
+            {data
+              .filter((c) => !c.tag.includes(filterTag))
+              .map((card) => (
+                <motion.div
+                  key={card.id}
+                  className={`${card.grid} opacity-25`}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 0.25 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  layout
+                >
+                  {componentMap[card.component as keyof typeof componentMap]}
+                </motion.div>
+              ))}
+          </>
+        )}
       </AnimatePresence>
     </div>
   );
