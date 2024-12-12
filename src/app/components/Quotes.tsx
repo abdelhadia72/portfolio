@@ -16,7 +16,7 @@ export default function QuoteComponent() {
         <div className="flex items-center space-x-4 pt-4">
           <div className="w-16 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full"></div>
           <span className="text-sm font-bold text-indigo-300 tracking-widest uppercase">
-            MADD
+            Joma
           </span>
         </div>
       </div>

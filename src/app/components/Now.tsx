@@ -14,19 +14,19 @@ export default function Now() {
         <div className="flex items-center">
           <Code2 className="w-5 h-5 mr-2 text-blue-500" />
           <p>
-            Working on <span className="font-medium">Shari project</span>
+            Working on <span className="font-medium">X something</span>
           </p>
         </div>
         <div className="flex items-center">
           <ChessKnight className="w-5 h-5 mr-2 text-green-500" />
           <p>
-            Learning <span className="font-medium">chess game</span>
+            Learning <span className="font-medium">X something</span>
           </p>
         </div>
         <div className="flex items-center">
           <Palette className="w-5 h-5 mr-2 text-purple-500" />
           <p>
-            Learning <span className="font-medium">UI/UX design</span>
+            Learning <span className="font-medium">X something</span>
           </p>
         </div>
       </div>
