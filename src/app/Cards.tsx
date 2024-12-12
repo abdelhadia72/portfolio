@@ -21,7 +21,6 @@ const componentMap = {
   LocationMap: <LocationMap />,
   Empty: <Empty />,
 };
-
 const createCardData = (filterTag: string) => [
   {
     id: 1,
