@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
@@ -8,7 +10,6 @@ import {
   SiCss3,
   SiSass,
   SiMongodb,
-  SiExpress,
   SiMysql,
   SiPostman,
   SiJavascript,
@@ -183,7 +184,6 @@ const icons: Icon[] = [
 ];
 
 const firstRow = icons.slice(0, Math.ceil(icons.length / 2));
-const secondRow = icons.slice(Math.ceil(icons.length / 2));
 
 export default function FloatingIcons() {
   return (

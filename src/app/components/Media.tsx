@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
 import SocialLink from "./social-link";

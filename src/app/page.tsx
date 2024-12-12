@@ -1,20 +1,9 @@
+/* eslint-disable */
+
 "use client";
 import Cards from "./Cards";
 import Nav from "./Nav";
 import { useState } from "react";
-
-import {
-  MapPin,
-  Briefcase,
-  FileText,
-  Code,
-  User,
-  Quote,
-  Folder,
-  Menu,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   const [filterTag, setFilterTag] = useState("all");

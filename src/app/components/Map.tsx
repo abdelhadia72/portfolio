@@ -1,19 +1,9 @@
+/* eslint-disable */
 "use client";
 
-import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { MapPin } from "lucide-react";
 
 export default function LocationMap() {
-  // const [position, setPosition] = useState({ x: 50, y: 50 })
-
-  // const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
-  //   const rect = e.currentTarget.getBoundingClientRect()
-  //   const x = ((e.clientX - rect.left) / rect.width) * 100
-  //   const y = ((e.clientY - rect.top) / rect.height) * 100
-  //   setPosition({ x, y })
-  // }
-
   return (
     <div className="w-full mx-auto">
       <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">

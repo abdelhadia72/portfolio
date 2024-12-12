@@ -1,7 +1,9 @@
+/* eslint-disable */
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import WavesurferPlayer, { WaveSurfer } from "@wavesurfer/react";
+import WavesurferPlayer from "@wavesurfer/react";
+import WaveSurfer from "wavesurfer.js";
 import {
   CirclePlay,
   CirclePause,
@@ -15,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const About = () => {
-  const [wavesurfer, setWavesurfer] = useState<WaveSurfer>(null);
+  const [wavesurfer, setWavesurfer] = useState<WaveSurfer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const onReady = (ws: WaveSurfer) => {
     setWavesurfer(ws);

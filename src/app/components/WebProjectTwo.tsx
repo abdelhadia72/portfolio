@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";

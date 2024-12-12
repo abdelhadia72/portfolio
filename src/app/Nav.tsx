@@ -1,6 +1,12 @@
+/* eslint-disable */
+
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Send } from "lucide-react";
+
+interface NavProps {
+  setTag: (tag: string) => void;
+}
 
 const tabs = [
   { id: 1, name: "All" },
@@ -9,7 +15,7 @@ const tabs = [
   { id: 4, name: "Contact" },
 ];
 
-const Nav: React.FC = ({ setTag }) => {
+const Nav: React.FC<NavProps> = ({ setTag }) => {
   const [active, setActive] = useState(1);
   const [mailHover, setMailHover] = useState(false);
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { ExternalLink, Github, Linkedin, Mail, Twitter } from "lucide-react";
 

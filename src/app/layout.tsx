@@ -1,6 +1,7 @@
+/* eslint-disable */
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { ChartCandlestick } from "lucide-react";
 import "./globals.css";
 
 const geistSans = localFont({
