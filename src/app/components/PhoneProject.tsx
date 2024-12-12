@@ -4,8 +4,8 @@ import { ExternalLink, Github } from "lucide-react";
 
 const PhoneProject = () => {
   return (
-    <div className="h-full overflow-hidden group rounded-lg max-h-[400px] w-full bg-gradient-to-br from-[#0f1729] via-[#1a237e] to-[#000033] relative before:absolute before:inset-0 before:bg-[url('/stars.png')] before:bg-repeat before:opacity-50 before:animate-twinkle">
-      <div className="absolute top-4 right-4 flex gap-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+    <div className="h-full group rounded-lg max-h-[400px] w-full relative before:absolute before:inset-0 before:bg-[url('/stars.png')] before:bg-repeat before:opacity-50 before:animate-twinkle">
+      <div className="top-4 right-4 flex gap-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
         <div className="border border-white rounded-full p-1.5 hover:bg-blue-400/20 transition-all group/icon">
           <Github className="h-6 w-6 text-white hover:text-blue-400 transition-colors cursor-pointer" />
           <span className="absolute invisible group-hover/icon:visible -bottom-8 right-0 bg-white text-black text-sm px-2 py-1 rounded">
